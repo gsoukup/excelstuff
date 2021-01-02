@@ -3,11 +3,16 @@
 #VBA remake in python for commuting EXCEL files
 
 import openpyxl
+import os
+
+from tkinter import filedialog
+from tkinter import *
 
 path = ""
 
 
 """
+
 Sub TSSARE()
 
 '
@@ -96,11 +101,11 @@ End If
 Application.DisplayAlerts = True
 
 End Sub
+
 """
-from tkinter import filedialog
-from tkinter import *
+
 root = Tk()
 root.withdraw()
-path = filedialog.askdirectory()
 
+path = filedialog.askdirectory()
 print(path)
