@@ -3,17 +3,40 @@
 #VBA remake in python for commuting EXCEL files
 
 import openpyxl
-import os
 
+#https://stackoverflow.com/questions/9319317/quick-and-easy-file-dialog-in-python
 from tkinter import filedialog
 from tkinter import *
-
 path = ""
 
+#https://stackoverflow.com/questions/10377998/how-can-i-iterate-over-files-in-a-given-directory
+import os
+filename = ""
 
-"""
+
+
+
+
+root = Tk()
+root.withdraw()
+
+path = filedialog.askdirectory()
+print(path)
+
+for filename in os.listdir(path):
+    if filename.endswith(".xls") or filename.endswith(".xlsx"): 
+        print(os.path.join(path, filename))
+        continue
+    else:
+        continue
+
+
+
+
+""" 
 
 Sub TSSARE()
+
 
 '
 '                                   Declaration
@@ -101,11 +124,8 @@ End If
 Application.DisplayAlerts = True
 
 End Sub
-
 """
 
-root = Tk()
-root.withdraw()
 
-path = filedialog.askdirectory()
-print(path)
+
+
